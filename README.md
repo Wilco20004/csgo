@@ -1,2 +1,2 @@
 # csgo
-CSGO Dedicaed Server base on ubuntu
+Docker Image of CSGO Dedicated Server based on ubuntu
