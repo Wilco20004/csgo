@@ -1,6 +1,8 @@
 FROM ubuntu 
 MAINTAINER Toldwin <toldwin@gmail.com> 
 
+ENV REFRESH_DATE 2015-07-19
+
 # lib32gcc1 installation 
 RUN \ 
   apt-get update && \ 
