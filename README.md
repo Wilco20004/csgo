@@ -4,7 +4,7 @@ Docker Image of CSGO Dedicated Server based on ubuntu.<br>Rcon password can be s
 Default rcon : toldrcon   
 
 ## Dedicated server is launched with the command
-sudo docker run -p  27015:27015 -p 27015:27015/udp -it toldwin/csgo:062015
+sudo docker run -p  27015:27015 -p 27015:27015/udp -it toldwin/csgo
 <br><br>
 ## You also can launch in command line mode with
 sudo docker run -itp 27015:27015/udp toldwin/csgo bash
