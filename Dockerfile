@@ -1,7 +1,7 @@
 FROM ubuntu 
-MAINTAINER Willem <wilco@peachss.co.za> 
+MAINTAINER Toldwin <toldwin@gmail.com> 
 
-ENV REFRESH_DATE 2018-02-04
+ENV REFRESH_DATE 2018-01-31
 
 # lib32gcc1 installation 
 RUN \ 
@@ -12,7 +12,7 @@ RUN \
 
 # Steam installation 
 RUN mkdir /steamcmd && \ 
-    cd /steamcmd &&  mkdir /csgoserver && \ 
+    cd /steamcmd && \ 
         wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \ 
         tar -xvzf steamcmd_linux.tar.gz 
 
@@ -25,19 +25,16 @@ RUN /steamcmd/steamcmd.sh +login anonymous +force_install_dir /steamcmd/csgoserv
 #user steam 
 
 # Expose Dedicated server port 
-EXPOSE 27015
+EXPOSE 27015/udp
 
+# Add conf file including root password
+# ADD server.cfg /steamcmd/csgoserver/csgo/cfg/server.cfg
         
 # Used Dedicated server parameters 
 ENV GAME_TYPE 0 
 ENV GAME_MODE 1 
 ENV MAP_GROUP mg_active 
 ENV START_MAP de_dust2 
-ENV API_KEY change_me
-ENV SERVER_NAME Forsaken_Server
-ENV RCON_PW 'Test123'
-
-#VOLUME ["/steamcmd/csgoserver/csgo"]
 
 # Launching dedicated server 
 WORKDIR /steamcmd/csgoserver 
@@ -48,7 +45,4 @@ CMD ./srcds_run \
   +game_type $GAME_TYPE \ 
   +game_mode $GAME_MODE \ 
   +mapgroup $MAP_GROUP \ 
-  +map $START_MAP \ 
-  +sv_setsteamaccount $API_KEY \ 
-  +hostname $SERVER_NAME \ 
-  +rcon_password $RCON_PW
+  +map $START_MAP 
