@@ -37,7 +37,7 @@ ENV API_KEY change_me
 ENV SERVER_NAME Forsaken_Server
 ENV RCON_PW 'Test123'
 
-VOLUME ["/steamcmd/csgoserver/csgo/cfg"]
+#VOLUME ["/steamcmd/csgoserver/csgo/cfg"]
 
 # Launching dedicated server 
 WORKDIR /steamcmd/csgoserver 
