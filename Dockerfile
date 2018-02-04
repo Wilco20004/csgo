@@ -29,7 +29,7 @@ EXPOSE 27015/udp
 
 # Add conf file including root password
 # ADD server.cfg /steamcmd/csgoserver/csgo/cfg/server.cfg
-        
+VOLUME ["/steamcmd/csgoserver/csgo"]   
 # Used Dedicated server parameters 
 ENV GAME_TYPE 0 
 ENV GAME_MODE 1 
