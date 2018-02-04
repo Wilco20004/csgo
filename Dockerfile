@@ -33,8 +33,8 @@ ENV GAME_TYPE 0
 ENV GAME_MODE 1 
 ENV MAP_GROUP mg_active 
 ENV START_MAP de_dust2 
-ENV API_KEY ''
-ENV SERVER_NAME 'Forsaken Server'
+ENV API_KEY change_me
+ENV SERVER_NAME Forsaken_Server
 ENV RCON_PW 'Test123'
 
 VOLUME ["/steamcmd"]
