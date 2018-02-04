@@ -12,7 +12,7 @@ RUN \
 
 # Steam installation 
 RUN mkdir /steamcmd && \ 
-    cd /steamcmd && \ 
+    cd /steamcmd &&  mkdir /csgoserver && \ 
         wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \ 
         tar -xvzf steamcmd_linux.tar.gz 
 
