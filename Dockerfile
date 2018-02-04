@@ -17,7 +17,7 @@ RUN mkdir /steamcmd && \
         tar -xvzf steamcmd_linux.tar.gz 
 
 # CSGO dedicated server installation 
-# RUN /steamcmd/steamcmd.sh +login anonymous +force_install_dir /steamcmd/csgoserver +app_update 740 validate +quit 
+RUN /steamcmd/steamcmd.sh +login anonymous +force_install_dir /steamcmd/csgoserver +app_update 740 validate +quit 
 
 # Steam user creation and usage 
 #RUN useradd -m steam --password password 
